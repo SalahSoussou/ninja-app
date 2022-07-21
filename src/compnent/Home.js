@@ -1,17 +1,17 @@
-import React from "react";
+import { useState } from "react";
+import Blogs from "../BlogList";
 
 const Home = () => {
-  const [num, setnum] = React.useState(1);
-
-  const handleClick = () => {
-    setnum(num + 1);
-  };
+  const [blogs, setblogs] = useState([
+    { id: 1, title: "blog 1", body: "sum text ...", author: "salah" },
+    { id: 2, title: "blog 2", body: "sum text ...", author: "soiu" },
+    { id: 3, title: "blog 3", body: "sum text ...", author: "soussou" },
+    { id: 4, title: "blog 4", body: "sum text ...", author: "iddine" },
+  ]);
 
   return (
     <div className="home">
-      <h2>Home page</h2>
-      <h1>{num}</h1>
-      <button onClick={handleClick}>Click me</button>
+      <Blogs blogs={blogs} />
     </div>
   );
 };
