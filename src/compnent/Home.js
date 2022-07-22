@@ -9,13 +9,17 @@ const Home = () => {
     setTimeout(() => {
       fetch("http://localhost:8000/blogs")
         .then((res) => {
+          console.log(res);
           return res.json();
         })
         .then((data) => {
           setblogs(data);
           setLoding(false);
+        })
+        .catch((err) => {
+          console.log(err.message);
         });
-    }, 5000);
+    }, 1000);
   }, []);
 
   return (
