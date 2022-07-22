@@ -1,0 +1,8 @@
+{
+    "blogs":[
+    { "id": 1, "title": "blog 1", "body": "sum text This HTML file is a template.If you open it directly in the browser, you will see an empty page....", "author": "salah" },
+    { "id": 2, "title": "blog 2", "body": "sum text You can add webfonts, meta tags, or analytics to this file.The build step will place the bundled scripts into the <body> tag....", "author": "soiu" },
+    { "id": 3, "title": "blog 3", "body": "sum text To begin the development, run npm start or yarn start.To create a producton bundle, use `npm run build` or `yarn build...", "author": "soussou" },
+    { "id": 4, "title": "blog 4", "body": "sum text ...", "author": "salah" }
+  ]
+}
