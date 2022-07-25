@@ -1,5 +1,6 @@
 import Blogs from "../BlogList";
 import useFetch from "./useFetch";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const {
@@ -17,6 +18,7 @@ const Home = () => {
         </div>
       )}
       {blogs && <Blogs blogs={blogs} title="All Blogs!" />}
+      <Link to={"/addBlog"}>Add blog</Link>
     </div>
   );
 };
