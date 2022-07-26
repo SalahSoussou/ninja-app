@@ -6,7 +6,9 @@ const useFetch = (url) => {
     [error, satError] = useState(null);
 
   useEffect(() => {
-    fetch(url)
+    const cont = new AbortController();
+
+    fetch(url, { signal: cont.signal })
       .then((res) => {
         if (!res.ok) {
           throw Error("no data for salah");
@@ -19,9 +21,15 @@ const useFetch = (url) => {
         satError(null);
       })
       .catch((err) => {
-        satError(err.message);
-        setLoding(false);
+        if (err.name === "AbortError") {
+          console.log("abort");
+        } else {
+          satError(err.message);
+          setLoding(false);
+        }
       });
+
+    return () => cont.abort();
   }, [url]);
 
   return { data, isloding, error };
